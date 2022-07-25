@@ -1,0 +1,229 @@
+.graduate {
+  padding-top: 50px;
+  padding-bottom: 90px;
+  overflow: hidden;
+  @include md-block {
+    overflow: unset;
+  }
+  &__container {
+    max-width: 768px;
+    padding: 0;
+    @include md-block {
+      max-width: 768px;
+      padding: 0 12px;
+    }
+    @include lg-block {
+      max-width: 1140px;
+      padding: 0 10px;
+    }
+  }
+  &-list {
+    position: relative;
+    @include md-block {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    &__item {
+      position: relative;
+      z-index: 1;
+      @include lg-block {
+        width: 560px;
+      }
+      &--first {
+        margin-bottom: 260px;
+        @include xs-block {
+          margin-bottom: 300px;
+        }
+      }
+      &--second {
+        padding: 46px 10px 65px;
+        background: #A5E5F4;
+        @include sm-block {
+          padding: 46px 25px 65px;
+        }
+        @include md-block {
+          padding: 300px 25px 35px;
+          border-radius: 5px 5px 0 0;
+        }
+        @include lg-block {
+          padding: 300px 11px 60px 63px;
+        }
+      }
+      &--three {
+        padding: 30px;
+        background-image: url('../img/students.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        @include xs-block {
+          padding: 37px 47px 85px;
+        }
+        @include md-block {
+          position: absolute;
+          bottom: -60px;
+          width: 361px;
+          padding: 37px 62px 85px;
+          border-radius: 5px;
+        }
+        @include lg-block {
+          padding: 81px 30px 84px;
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          z-index: -1;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(78, 66, 148, 0.70);
+          @include sm-block {
+            border-radius: 5px;
+          }
+        }
+      }
+      &--float {
+        width: 100%;
+        max-width: 290px;
+        position: absolute;
+        bottom: -65px;
+        left: 50%;
+        transform: translate(-50%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include xs-block {
+          max-width: 333px;
+        }
+        @include md-block {
+          max-width: 373px;
+          left: unset;
+          right: 5px;
+          bottom: -60px;
+          transform: unset;
+        }
+        @include lg-block {
+          max-width: 584px;
+          right: 0;
+        }
+        &:before {
+          @include md-block {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 52%;
+            transform: translate(-53%, 0);
+            width: 113px;
+            height: 1px;
+            border-bottom: 1px dotted #000000;
+          }
+          @include lg-block {
+            width: 288px;
+            left: 55%;
+            transform: translate(-58%,0);
+          }
+        }
+      }
+    }
+    &__picture {
+      position: absolute;
+      top: -220px;
+      left: 50%;
+      transform: translate(-50%);
+      width: 300px;
+      height: 250px;
+      overflow: hidden;
+      border-radius: 5px 5px 0 0;
+      @include xs-block {
+        top: -250px;
+        width: 333px;
+        height: 278px;
+      }
+      @include md-block {
+        top: 0;
+        left: 0;
+        transform: unset;
+        width: 100%;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &__text {
+      max-width: 333px;
+      margin: auto;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 34px;
+      color: #333333;
+      @include lg-block {
+        max-width: 100%;
+      }
+      &--padding {
+        padding-left: 33px;
+        @include md-block {
+          padding: 0;
+        }
+      }
+      &--white {
+        color: #fff;
+      }
+      &--three {
+        @include lg-block {
+          max-width: 333px;
+        }
+      }
+    }
+    &__num {
+      max-width: 333px;
+      margin: auto;
+      margin-bottom: 37px;
+      font-weight: 700;
+      font-size: 64px;
+      line-height: 50px;
+      color: #FFFFFF;
+      @include lg-block {
+        max-width: 100%;
+      }
+    }
+  }
+  &-cups {
+    display: flex;
+    align-items: center;
+    img {
+      width: 63px;
+    }
+  }
+  &-link {
+    position: relative;
+    display: block;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 17px;
+    color: #333333;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 1px;
+      background: #333333;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: -6px;
+      left: -16px;
+      z-index: -1;
+      width: 35px;
+      height: 35px;
+      background-size: 35px;
+      background-image: url('../img/round.svg');
+      background-repeat: no-repeat;
+    }
+  }
+}

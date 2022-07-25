@@ -1,0 +1,78 @@
+.timeline {
+  position: relative;
+  z-index: 10;
+  padding-top: 127px;
+  padding-bottom: 50px;
+  overflow: hidden;
+  @include sm-block {
+    padding-bottom: 110px;
+  }
+  &__container {
+    @include xs-block {
+      max-width: 375px;
+      padding: 0 24px;
+    }
+    @include md-block {
+      max-width: 768px;
+      padding: 0 12px;
+    }
+    @include lg-block {
+      max-width: 1140px;
+      padding: 0 10px;
+    }
+  }
+  &-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    &__text {
+      padding-left: 25px;
+      @include md-block {
+        padding-left: 64px;
+      }
+      @include lg-block {
+        padding-left: 95px;
+      }
+      &--first {
+        max-width: 300px;
+        @include md-block {
+          max-width: 425px;
+        }
+        @include lg-block {
+          max-width: 535px;
+        }
+      }
+    }
+    &--first {
+      margin-bottom: 196px;
+      @include sm-block {
+        margin-bottom: 64px;
+      }
+    }
+    &--second {
+      width: 238px;
+      margin-left: auto;
+      @include md-block {
+        width: 413px;
+      }
+      @include lg-block {
+        width: 505px;
+      }
+    }
+    &--three {
+      width: 300px;
+      margin: auto;
+      @include xs-block {
+        width: 333px;
+        margin: auto;
+      }
+      @include sm-block {
+        width: 360px;
+      }
+      @include lg-block {
+        width: 415px;
+      }
+    }
+  }
+}

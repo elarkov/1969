@@ -1,0 +1,183 @@
+// Тема по умолчанию
+html,
+body{
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 320px;
+  font-family: $default-font;
+  text-rendering: optimizeSpeed;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  color: $text;
+}
+
+button{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.container {
+  @include wrapper();
+}
+
+.s-header {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 34px;
+  text-transform: uppercase;
+  color: #333333;
+  &__year {
+    font-size: 64px;
+    line-height: 34px;
+  }
+}
+
+.s-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 34px;
+}
+
+.decore {
+  content: '';
+  position: absolute;
+  background-repeat: no-repeat;
+  z-index: -1;
+  &--round {
+    top: -42px;
+    left: -65px;
+    width: 120px;
+    height: 120px;
+    background-image: url('../img/round.svg');
+    @include sm-block {
+      top: 13px;
+      left: 48px;
+    }
+  }
+  &--poligon {
+    left: -120px;
+    top: 54px;
+    transform: rotate(100deg);
+    width: 139px;
+    height: 145px;
+    background-image: url('../img/blue-poligon.svg');
+    @include xs-block {
+      left: -157px;
+    }
+    @include sm-block {
+      top: -15px;
+      left: 5px;
+      transform: rotate(0);
+    }
+  }
+  &--triangle {
+    right: -150px;
+    top: -25px;
+    width: 290px;
+    height: 290px;
+    background-size: 285px;
+    background-image: url('../img/blue-triangle.svg');
+    @include xs-block {
+      right: -165px;
+    }
+    @include md-block {
+      right: unset;
+      top: -430px;
+      left: -174px;
+    }
+    @include lg-block {
+      top: -177px;
+      left: -144px;
+    }
+  }
+  &--shape-transform {
+    top: -58px;
+    right: 15px;
+    width: 90px;
+    height: 130px;
+    background-image: url('../img/shape-transform.svg');
+    background-repeat: no-repeat;
+    background-size: 90px;
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+    @include md-block {
+      top: -104px;
+      right: -78px;
+      width: 150px;
+      height: 213px;
+      background-size: 150px;
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}
+
+.line {
+  position: absolute;
+  top: -196px;
+  left: -38px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  max-width: 222px;
+  @include xs-block {
+    left: -62px;
+  }
+  @include sm-block {
+    top: -30px;
+    max-width: 266px;
+    gap: 92px;
+  }
+  @include lg-block {
+    left: -335px;
+  }
+  &__item {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    font-size: 0;
+    border-radius: 100%;
+    background: #FF7B9A;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 81px;
+      height: 1px;
+      border-bottom: 1px dotted;
+      top: 61px;
+      left: 50%;
+      transform: translate(-50%) rotate(90deg);
+      @include sm-block {
+        width: 102px;
+        top: 69px;
+        transform: translate(-50%, -50%) rotate(90deg);
+        z-index: -1;
+      }
+    }
+    &:last-child {
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
